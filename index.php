@@ -205,9 +205,9 @@ if ($user) {
   <div class="w-full md:w-1/2 lg:w-1/3 px-2">
     <div class="card-listing h-full mb-6 relative overflow-hidden bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300">
 
-      <?php if (!empty($l['image'])): ?>
+      <?php if (!empty($l['image_path'])): ?>
         <?php
-          $imgs = array_filter(explode(',', $l['image']));
+          $imgs = array_filter(explode(',', $l['image_path']));
           $first = $imgs[0] ?? '';
         ?>
         <div class="relative listing-images group" data-images="<?=htmlspecialchars(json_encode($imgs))?>">

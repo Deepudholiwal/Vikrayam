@@ -81,9 +81,9 @@ if (!$l) {
     <div class="md:w-2/3">
       <div class="card-custom shadow-lg">
         <div class="p-6">
-          <?php if (!empty($l['image'])): ?>
+          <?php if (!empty($l['image_path'])): ?>
             <?php
-              $imgs = array_filter(explode(',', $l['image']));
+              $imgs = array_filter(explode(',', $l['image_path']));
               $first = $imgs[0] ?? '';
             ?>
             <div class="mb-6 relative listing-gallery" data-images="<?=htmlspecialchars(json_encode($imgs))?>">

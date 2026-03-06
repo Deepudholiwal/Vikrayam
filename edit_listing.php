@@ -28,8 +28,8 @@ $cats = $pdo->query("SELECT * FROM categories")->fetchAll();
 $locs = $pdo->query("SELECT id, name, state FROM locations ORDER BY name ASC")->fetchAll();
 $err = '';
 $existingImages = [];
-if ($l['image']) {
-    $existingImages = array_filter(explode(',',$l['image']));
+if ($l['image_path']) {
+    $existingImages = array_filter(explode(',',$l['image_path']));
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $category_id = (int)($_POST['category_id'] ?? 0);
         $price = trim($_POST['price'] ?? '');
         $location_id = (int)($_POST['location_id'] ?? 0);
-        $image_path = $l['image'];
+        $image_path = $l['image_path'];
 
         // Get location name from selected ID
         $location = '';
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$title || !$description || !$category_id) {
             $err = 'Please fill title, description and category.';
         } elseif (!$err) {
-            $upd = $pdo->prepare("UPDATE listings SET category_id=?, title=?, description=?, price=?, location=?, image=? WHERE id=?");
+            $upd = $pdo->prepare("UPDATE listings SET category_id=?, title=?, description=?, price=?, location=?, image_path=? WHERE id=?");
             $upd->execute([$category_id,$title,$description,$price,$location,$image_path,$id]);
             $_SESSION['flash'] = 'Listing updated.';
             header('Location: view_listing?id='.$id); exit;

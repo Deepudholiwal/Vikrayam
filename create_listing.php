@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $description = trim($_POST['description'] ?? '');
   $category_id = (int)($_POST['category_id'] ?? 0);
   $location_id = (int)($_POST['location_id'] ?? 0);
-  $price = trim($_POST['price'] ?? '');
+  $price = !empty(trim($_POST['price'] ?? '')) ? trim($_POST['price']) : null;
   $image_path = null;
 
   // Handle image upload (support multiple)
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $locStmt->execute([$location_id]);
     $locName = $locStmt->fetchColumn();
     
-    $stmt = $pdo->prepare("INSERT INTO listings (user_id,category_id,title,description,price,location,image) VALUES (?,?,?,?,?,?,?)");
+    $stmt = $pdo->prepare("INSERT INTO listings (user_id,category_id,title,description,price,location,image_path) VALUES (?,?,?,?,?,?,?)");
     $stmt->execute([$user['id'],$category_id,$title,$description,$price,$locName,$image_path]);
     $_SESSION['flash'] = 'Listing posted successfully!';
     header('Location: index'); exit;

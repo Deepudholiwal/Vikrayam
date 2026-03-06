@@ -25,9 +25,9 @@ require 'header.php';
       ?>
         <div class="w-full md:w-1/2 px-2">
           <div class="card-listing h-full mb-4 relative bg-white rounded-2xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden">
-            <?php if (!empty($l['image'])): ?>
+            <?php if (!empty($l['image_path'])): ?>
               <?php
-                $imgs = array_filter(explode(',', $l['image']));
+                $imgs = array_filter(explode(',', $l['image_path']));
                 $first = $imgs[0] ?? '';
               ?>
               <div class="relative listing-images group" data-images="<?=htmlspecialchars(json_encode($imgs))?>">

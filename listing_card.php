@@ -9,7 +9,7 @@
 if (!isset($listing)) return;
 
 $l = $listing;
-$imgs = $l['image'] ? explode(',', $l['image']) : [];
+$imgs = $l['image_path'] ? explode(',', $l['image_path']) : [];
 $first = $imgs ? $imgs[0] : 'https://via.placeholder.com/300?text=No+Image';
 
 // Get likes count
