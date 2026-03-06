@@ -1,0 +1,411 @@
+/* Modern Classifieds Custom Styles */
+
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #17a2b8;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --light-bg: #e6e7ee;
+  --light-shadow: #c8c9d0;
+  --light-highlight: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Page transition effects */
+body {
+  overflow-x: hidden;
+}
+
+.page-transition {
+  animation: pageSlideIn 0.5s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Enhanced Input Fields */
+.form-control, .form-select {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+}
+
+.form-control::placeholder {
+  color: rgba(51, 51, 51, 0.5) !important;
+  font-style: italic;
+}
+
+/* Label Enhancement */
+.form-label {
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Card Gradient Background */
+.card {
+  background: linear-gradient(135deg, var(--light-bg) 0%, #f0f1f7 100%);
+}
+
+.card:hover {
+  transform: translateY(-8px) !important;
+}
+
+/* Hero Section Enhancement */
+.hero {
+  background: linear-gradient(135deg, #e6e7ee 0%, #f0f1f7 100%);
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  color: var(--primary-color);
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -1px;
+}
+
+.hero .lead {
+  color: var(--text-light);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/* Badge Enhancements */
+.badge {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge-success {
+  background: linear-gradient(135deg, var(--success-color), #229954);
+}
+
+.badge-primary {
+  background: linear-gradient(135deg, var(--primary-color), #357abd);
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, #f39c12, #d68910);
+}
+
+/* Listing Card Specific */
+.listing-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.listing-card img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 220px;
+  object-fit: cover;
+}
+
+.listing-card:hover img {
+  transform: scale(1.08);
+}
+
+.listing-card .card-body {
+  padding: 20px;
+}
+
+.listing-card .card-title {
+  color: var(--text-dark);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.listing-card .card-text {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.listing-card .card-footer {
+  background: transparent;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+/* Button Styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #357abd) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #357abd, var(--primary-color)) !important;
+  box-shadow: 0 8px 20px rgba(74, 144, 226, 0.4) !important;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-color), #229954) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #229954, var(--success-color)) !important;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger-color), #c0392b) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #c0392b, var(--danger-color)) !important;
+}
+
+/* Table Styling */
+.table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table thead {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.table tbody tr {
+  transition: all 0.3s ease;
+  background: var(--light-bg);
+}
+
+.table tbody tr:hover {
+  transform: translateX(5px);
+  box-shadow: 8px 8px 16px var(--light-shadow), -8px -8px 16px var(--light-highlight);
+}
+
+.table td {
+  padding: 15px;
+  vertical-align: middle;
+  color: var(--text-dark);
+}
+
+/* Alert Styling */
+.alert {
+  border-left: 5px solid;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.alert-success {
+  border-left-color: var(--success-color);
+  background: rgba(39, 174, 96, 0.1);
+}
+
+.alert-danger {
+  border-left-color: var(--danger-color);
+  background: rgba(231, 76, 60, 0.1);
+}
+
+.alert-warning {
+  border-left-color: #f39c12;
+  background: rgba(243, 156, 18, 0.1);
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+/* Search Form Styling */
+.search-card {
+  background: linear-gradient(135deg, var(--light-bg) 0%, #f0f1f7 100%);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%234a90e2' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 35px;
+}
+
+/* Loading State */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Link Styling */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+/* List Group Item Styling */
+.list-group-item {
+  border: none !important;
+  background: var(--light-bg) !important;
+  margin-bottom: 10px;
+  border-radius: 12px !important;
+}
+
+.list-group-item:hover {
+  transform: translateX(5px);
+  box-shadow: 6px 6px 12px var(--light-shadow), -6px -6px 12px var(--light-highlight) !important;
+}
+
+/* Modal Enhancement */
+.modal-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+}
+
+.breadcrumb-item.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.breadcrumb-item a {
+  color: var(--text-light);
+}
+
+.breadcrumb-item a:hover {
+  color: var(--primary-color);
+}
+
+/* Text Utilities */
+.text-primary {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.text-secondary {
+  color: var(--text-light) !important;
+}
+
+.text-success {
+  color: var(--success-color) !important;
+  font-weight: 600;
+}
+
+/* Responsive Classes */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table td {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    margin: 10px !important;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 16px;
+  }
+
+  .card {
+    box-shadow: 4px 4px 8px var(--light-shadow), -4px -4px 8px var(--light-highlight) !important;
+  }
+
+  .table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar, .footer, .btn:not(.print-btn) {
+    display: none;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
