@@ -1,0 +1,19 @@
+# PHPStorm
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config with credentials
+config.php
+
+# Uploads
+uploads/*
+
+# Logs
+*.log
+
+# Environment
+.env
+
