@@ -59,8 +59,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $locStmt->execute([$location_id]);
     $locName = $locStmt->fetchColumn();
     
-    $stmt = $pdo->prepare("INSERT INTO listings (user_id,category_id,title,description,price,location,image_path) VALUES (?,?,?,?,?,?,?)");
-    $stmt->execute([$user['id'],$category_id,$title,$description,$price,$locName,$image_path]);
+    // Try image_path first, fallback to image
+    try {
+        $stmt = $pdo->prepare("INSERT INTO listings (user_id,category_id,title,description,price,location,image_path) VALUES (?,?,?,?,?,?,?)");
+        $stmt->execute([$user['id'],$category_id,$title,$description,$price,$locName,$image_path]);
+    } catch (Exception $e) {
+        // Fallback to 'image' column
+        $stmt = $pdo->prepare("INSERT INTO listings (user_id,category_id,title,description,price,location,image) VALUES (?,?,?,?,?,?,?)");
+        $stmt->execute([$user['id'],$category_id,$title,$description,$price,$locName,$image_path]);
+    }
     $_SESSION['flash'] = 'Listing posted successfully!';
     header('Location: index'); exit;
   }
@@ -253,3 +260,4 @@ require 'header.php';
   })();
 </script>
 <?php require 'footer.php'; ?>
+
