@@ -20,11 +20,11 @@ if (!isset($_SESSION['created_at'])) {
     $_SESSION['created_at'] = time();
 }
 
-$DB_HOST = 'mysql.railway.internal';
+$DB_HOST = 'metro.proxy.rlwy.net';
 $DB_NAME = 'railway';
 $DB_USER = 'root';
 $DB_PASS = 'wPYHsHeRZVYLYGddkRIzWrBvwzVNaqBG';
-$DB_PORT = '3306';
+$DB_PORT = '34377';
 
 try {
     $pdo = new PDO(

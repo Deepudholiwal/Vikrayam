@@ -2,3 +2,10 @@
 {2026-03-03T08:05:13+01:00} LOGIN SUCCESS user=admin ip=::1
 {2026-03-03T10:14:09+01:00} LOGIN SUCCESS user=admin ip=::1
 {2026-03-03T10:37:28+01:00} LOGIN SUCCESS user=admin ip=::1
+2026-03-06 11:54:59 - Failed Login Attempt: admin from ::1
+2026-03-06 11:55:20 - Failed Login Attempt: admin from ::1
+2026-03-06 12:00:53 - Failed Login Attempt: admin from ::1
+2026-03-06 12:02:26 - Failed Login Attempt: admin from ::1
+2026-03-06 12:03:04 - Failed Login Attempt: admin@example.com from ::1
+2026-03-06 12:04:58 - Failed Login Attempt: admin@example.com from ::1
+2026-03-06 12:05:22 - Admin Login: Admin (ID: 1) from ::1
