@@ -20,16 +20,22 @@ if (!isset($_SESSION['created_at'])) {
     $_SESSION['created_at'] = time();
 }
 
-$DB_HOST = 'localhost';
-$DB_NAME = 'classifieds';
+$DB_HOST = 'mysql.railway.internal';
+$DB_NAME = 'railway';
 $DB_USER = 'root';
-$DB_PASS = 'Deepak@123'; 
+$DB_PASS = 'wPYHsHeRZVYLYGddkRIzWrBvwzVNaqBG';
+$DB_PORT = '3306';
 
 try {
-    $pdo = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4", $DB_USER, $DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
+    $pdo = new PDO(
+        "mysql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;charset=utf8mb4",
+        $DB_USER,
+        $DB_PASS,
+        [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ]
+    );
 } catch (Exception $e) {
     die("DB Connection failed: " . $e->getMessage());
 }
